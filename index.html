@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZENVORE — Premium Export Shirts</title>
+<meta name="description" content="ZENVORE: premium export-quality shirts. Crafted for the world.">
+<style>
+:root{--bg:#FFFFFF;--ink:#111111;--line:#E4E4E4;--grey:#6b6b6b;--mark:#EDEDED;
+--serif:"Playfair Display","Didot",Georgia,serif;--sans:"Helvetica Neue",Arial,sans-serif;
+--pad:clamp(20px,5vw,72px);--gap:clamp(16px,2.5vw,32px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:78px}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
+section{padding:clamp(56px,8vw,110px) var(--pad)}
+.wrap{max-width:1240px;margin:0 auto}
+h1,h2,h3,.logo{font-family:var(--serif);font-weight:700;letter-spacing:.02em}
+h2{font-size:clamp(28px,4vw,46px);margin-bottom:28px}
+.eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--grey);margin-bottom:14px}
+/* Header */
+header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{max-width:1240px;margin:0 auto;height:72px;padding:0 var(--pad);display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;font-size:24px;letter-spacing:.14em}
+.logo img{width:40px;height:40px;border-radius:50%}
+nav ul{display:flex;gap:36px;list-style:none}
+nav a{font-size:13px;letter-spacing:.16em;text-transform:uppercase;position:relative;padding:4px 0}
+nav a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--ink);transition:width .3s}
+nav a:hover::after{width:100%}
+.burger{display:none;background:none;border:0;cursor:pointer;width:40px;height:40px}
+.burger span{display:block;width:24px;height:2px;background:var(--ink);margin:5px auto;transition:.3s}
+/* Buttons */
+.btn{display:inline-block;padding:14px 30px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;border:1px solid var(--ink);background:var(--ink);color:#fff;cursor:pointer;font-family:var(--sans);transition:.3s}
+.btn:hover{background:#fff;color:var(--ink)}
+.btn.ghost{background:#fff;color:var(--ink)}.btn.ghost:hover{background:var(--ink);color:#fff}
+/* Hero */
+.hero{padding-top:clamp(36px,5vw,64px);padding-bottom:clamp(40px,6vw,80px)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:var(--gap);align-items:center}
+.hero h1{font-size:clamp(40px,6.5vw,82px);line-height:1.04;margin-bottom:22px}
+.hero p{color:var(--grey);font-size:17px;max-width:440px;margin-bottom:34px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero figure{aspect-ratio:4/5;overflow:hidden;background:#f4f4f4}
+.hero figure img{width:100%;height:100%;object-fit:cover}
+/* About */
+.about .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:calc(var(--gap)*2);align-items:center}
+.about figure{aspect-ratio:1/1;overflow:hidden;background:#f4f4f4}
+.about figure img{width:100%;height:100%;object-fit:cover}
+.about p{font-size:18px;max-width:560px}
+.rule{width:64px;height:2px;background:var(--ink);margin-top:28px}
+/* Products */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
+.card{border:1px solid var(--line);transition:transform .35s,box-shadow .35s}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,.08)}
+.card .ph{aspect-ratio:4/5;overflow:hidden;background:#f4f4f4}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.card:hover img{transform:scale(1.05)}
+.card .info{padding:22px}
+.card h3{font-size:20px;margin-bottom:6px}
+.card p{color:var(--grey);font-size:14px;margin-bottom:16px}
+.card a{font-size:12px;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid var(--ink);padding-bottom:2px}
+/* Contact */
+.contact .wrap{max-width:760px;position:relative}
+.formbox{position:relative;border:1px solid var(--line);padding:clamp(24px,5vw,56px);overflow:hidden;background:#fff}
+.watermark{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:0;pointer-events:none;user-select:none;
+font-family:var(--serif);font-weight:700;font-size:clamp(64px,17vw,180px);letter-spacing:.08em;color:var(--mark);opacity:.7}
+form{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.full{grid-column:1/-1}
+label{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
+input,textarea{width:100%;padding:13px 14px;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit;font-size:15px;border-radius:0;transition:border-color .2s}
+input:focus,textarea:focus{outline:none;border-color:var(--ink)}
+textarea{min-height:130px;resize:vertical}
+.err{color:#111;font-size:12px;min-height:16px;margin-top:4px;text-decoration:underline}
+input.bad,textarea.bad{border-color:var(--ink)}
+.ok{display:none;position:relative;z-index:1;margin-top:18px;padding:14px;border:1px solid var(--ink);text-align:center;font-size:14px}
+/* Footer */
+footer{border-top:1px solid var(--line);padding:48px var(--pad) 28px}
+.foot{max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-start}
+.foot .logo{margin-bottom:8px}.foot p{color:var(--grey);font-size:14px}
+.foot ul{list-style:none;display:flex;gap:24px;flex-wrap:wrap}
+.foot li a{font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.copy{max-width:1240px;margin:36px auto 0;padding-top:20px;border-top:1px solid var(--line);font-size:12px;color:var(--grey)}
+/* Reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s,transform .9s}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+@media(max-width:900px){
+.grid{grid-template-columns:repeat(2,1fr)}
+.hero .wrap,.about .wrap{grid-template-columns:1fr}
+.hero figure{order:-1;aspect-ratio:4/4.4}
+}
+@media(max-width:720px){
+.burger{display:block}
+nav{position:absolute;top:72px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);display:none}
+nav.open{display:block}
+nav ul{flex-direction:column;gap:0}
+nav a{display:block;padding:16px var(--pad);border-top:1px solid var(--line)}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.grid{grid-template-columns:1fr}
+form{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header>
+ <div class="bar">
+  <a href="#home" class="logo" aria-label="ZENVORE home"><img src="data:image/jpeg;base64,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" alt="ZENVORE logo" width="40" height="40">ZENVORE</a>
+  <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav id="nav" aria-label="Main">
+   <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="aboutvi.html">About</a></li>
+    <li><a href="1 collection.html">Collection</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="wrap">
+  <div class="reveal">
+   <p class="eyebrow">Export-Quality Apparel</p>
+   <h1>CRAFTED FOR THE WORLD.</h1>
+   <p>Premium Export Shirts. Exceptional Quality. Timeless Style.</p>
+   <div class="cta">
+    <a class="btn" href="1 collection.html">Explore Collection</a>
+    <a class="btn ghost" href="contact.html">Contact Us</a>
+   </div>
+  </div>
+  <figure class="reveal"><img id="heroImg" alt="Male model wearing a premium export-quality white shirt in a bright studio" fetchpriority="high"></figure>
+ </div>
+</section>
+
+<section class="about" id="about">
+ <div class="wrap">
+  <figure class="reveal"><img id="aboutImg" alt="Close-up of fine shirt fabric and stitching" loading="lazy"></figure>
+  <div class="reveal">
+   <p class="eyebrow">About Us</p>
+   <h2>ZENVORE</h2>
+   <p>At ZENVORE, we believe that exceptional clothing begins with exceptional craftsmanship. We specialize in premium export-quality shirts designed with attention to detail, refined fabrics, and timeless style. Our vision is to bring quality apparel to the global fashion market.<b>“Customize your order to match your style, preferences, and perfect fit.”</b></p>
+   <div class="rule"></div>
+  </div>
+ </div>
+</section>
+
+<section id="collection">
+ <div class="wrap">
+  <p class="eyebrow reveal">Collection</p>
+  <h2 class="reveal">Where Quality Meets Modern Style</h2>
+  <div class="grid" id="grid"></div>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="wrap">
+  <p class="eyebrow reveal">Contact</p>
+  <h2 class="reveal">Contact Us</h2>
+  <div class="formbox reveal">
+   <div class="watermark" aria-hidden="true">ZNVR</div>
+   <form id="form" novalidate>
+    <div><label for="name">Full Name</label><input id="name" name="name" type="text" autocomplete="name" required><div class="err" data-for="name"></div></div>
+    <div><label for="email">Email Address</label><input id="email" name="email" type="email" autocomplete="email" required><div class="err" data-for="email"></div></div>
+    <div><label for="phone">Phone Number (optional)</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+    <div><label for="subject">Subject</label><input id="subject" name="subject" type="text" required><div class="err" data-for="subject"></div></div>
+    <div class="full"><label for="message">Message</label><textarea id="message" name="message" required></textarea><div class="err" data-for="message"></div></div>
+    <div class="full"><button class="btn" type="submit">Send Inquiry</button></div>
+   </form>
+   <div class="ok" id="ok" role="status">Thank you. Your inquiry has been received — we will reply shortly.</div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="foot">
+  <div><div class="logo">ZENVORE</div><p>Premium Export Shirts. Made to Stand Out by Shahzaib.</p></div>
+  <ul>
+   <li><a href="#home">Home</a></li><li><a href="#about">About</a></li>
+   <li><a href="#collection">Collection</a></li><li><a href="#contact">Contact Us</a></li>
+  </ul>
+ </div>
+ <p class="copy">© 2026 ZENVORE. All Rights Reserved.</p>
+</footer>
+
+<script>
+/* ==========================================================
+   EDIT HERE — PRODUCTS
+   To use your own photos: replace each "image" URL below with
+   the link to your own product image (keep the quotes).
+   You can also change the name and description text.
+   Tip: use portrait photos (4:5 ratio) for best results.
+   The website reads this list automatically — no other changes needed.
+   ========================================================== */
+const products = [
+  { name: "Premium Cotton Shirts",       description: "Premium fabric with a refined finish.",       image: "1.jpeg" }, // REPLACE with your image URL
+  { name: "Classic Formal Shirts",       description: "Sharp tailoring for the modern boardroom.",   image: "2.jpeg" }, // REPLACE with your image URL
+  { name: "Casual Everyday Shirts",      description: "Easy, breathable comfort for every day.",     image: "3.jpeg" }, // REPLACE with your image URL
+  { name: "Oversized Streetwear Shirts", description: "Relaxed silhouettes with a bold edge.",       image: "4.jpeg" }, // REPLACE with your image URL
+  { name: "Textured & Premium Shirts",   description: "Rich weaves with depth and character.",       image: "5.jpeg" }, // REPLACE with your image URL
+  { name: "Custom Export Collection",    description: "Made to your specification, shipped worldwide.", image: "6.jpeg" }  // REPLACE with your image URL
+];
+
+/* Hero and About images — also replaceable */
+const heroImage  ="hero.jpeg";
+const aboutImage = "about.jpeg";
+
+/* Fallback shown if any image URL fails to load (neutral white/grey placeholder) */
+const FALLBACK = "data:image/svg+xml;utf8," + encodeURIComponent(
+ '<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000"><rect width="800" height="1000" fill="#f4f4f4"/><text x="400" y="510" text-anchor="middle" font-family="Georgia,serif" font-size="56" letter-spacing="8" fill="#cfcfcf">ZENVORE</text></svg>');
+
+function setImg(img, src){ img.onerror = function(){ this.onerror = null; this.src = FALLBACK; }; img.src = src; }
+
+/* Build product cards from the array above */
+const grid = document.getElementById("grid");
+products.forEach(function(p, i){
+  const card = document.createElement("article");
+  card.className = "card reveal";
+  card.innerHTML = '<div class="ph"><img width="800" height="1000" loading="lazy" alt=""></div>' +
+    '<div class="info"><h3></h3><p></p><a href="#contact">View Details</a></div>';
+  const img = card.querySelector("img");
+  img.alt = p.name + " — ZENVORE export shirt";
+  setImg(img, p.image);
+  card.querySelector("h3").textContent = p.name;
+  card.querySelector("p").textContent = p.description;
+  card.style.transitionDelay = (i % 3) * 80 + "ms";
+  grid.appendChild(card);
+});
+setImg(document.getElementById("heroImg"), heroImage);
+setImg(document.getElementById("aboutImg"), aboutImage);
+
+/* Mobile menu */
+const burger = document.getElementById("burger"), nav = document.getElementById("nav");
+function closeMenu(){ nav.classList.remove("open"); burger.classList.remove("open"); burger.setAttribute("aria-expanded","false"); }
+burger.addEventListener("click", function(){
+  const o = nav.classList.toggle("open"); burger.classList.toggle("open", o); burger.setAttribute("aria-expanded", o);
+});
+nav.addEventListener("click", function(e){ if(e.target.tagName === "A") closeMenu(); });
+
+/* Fade-in on scroll */
+const io = "IntersectionObserver" in window ? new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+}, {threshold:.12}) : null;
+document.querySelectorAll(".reveal").forEach(function(el){ io ? io.observe(el) : el.classList.add("in"); });
+
+/* Contact form — validation + success message.
+   NOTE: This only validates in the browser. To actually receive emails you must
+   connect the form to a backend or a form service (e.g. Formspree, Web3Forms,
+   EmailJS): add your service's endpoint and send the data with fetch() below. */
+const form = document.getElementById("form"), ok = document.getElementById("ok");
+form.addEventListener("submit", function(e){
+  e.preventDefault();
+  let valid = true;
+  [["name","Please enter your full name."],["email","Please enter a valid email address."],
+   ["subject","Please enter a subject."],["message","Please write a message."]].forEach(function(f){
+    const el = form.elements[f[0]], msg = form.querySelector('[data-for="'+f[0]+'"]');
+    const bad = !el.value.trim() || (f[0]==="email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value));
+    el.classList.toggle("bad", bad); msg.textContent = bad ? f[1] : ""; if(bad) valid = false;
+  });
+  if(!valid) return;
+  // TODO: send form data to your backend / form service here.
+  form.reset(); ok.style.display = "block";
+});
+</script>
+</body>
+</html>
